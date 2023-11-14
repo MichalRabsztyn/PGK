@@ -15,7 +15,7 @@ C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51520
+52878
 Successfully changed project path to: C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
 C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15436] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 4128439802 [EditorId] 4128439802 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-THDQ277) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [1976] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 4290178010 [EditorId] 4290178010 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-THDQ277) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [15436] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 4128439802 [EditorId] 4128439802 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-THDQ277) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1976] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 4290178010 [EditorId] 4290178010 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-THDQ277) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 12.70 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 12.99 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.12f1 (4fe6e059c7ef)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -70,34 +70,34 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007516 seconds.
-- Loaded All Assemblies, in  0.394 seconds
+Registered in 0.008638 seconds.
+- Loaded All Assemblies, in  0.476 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.277 seconds
-Domain Reload Profiling: 670ms
-	BeginReloadAssembly (110ms)
+- Finished resetting the current domain, in  0.279 seconds
+Domain Reload Profiling: 754ms
+	BeginReloadAssembly (170ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (36ms)
+	RebuildCommonClasses (41ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (171ms)
-		LoadAssemblies (108ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (184ms)
+		LoadAssemblies (169ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (170ms)
-			TypeCache.Refresh (168ms)
-				TypeCache.ScanAssembly (148ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (278ms)
+		AnalyzeDomain (182ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (161ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (279ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (213ms)
@@ -106,8 +106,8 @@ Domain Reload Profiling: 670ms
 			SetLoadedEditorAssemblies (8ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (139ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			ProcessInitializeOnLoadAttributes (133ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,55 +115,55 @@ Domain Reload Profiling: 670ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.862 seconds
-Refreshing native plugins compatible for Editor in 5.53 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.810 seconds
+Refreshing native plugins compatible for Editor in 4.68 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.633 seconds
-Domain Reload Profiling: 1491ms
-	BeginReloadAssembly (239ms)
+- Finished resetting the current domain, in  0.680 seconds
+Domain Reload Profiling: 1487ms
+	BeginReloadAssembly (163ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
+		CreateAndSetChildDomain (22ms)
 	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (66ms)
-	LoadAllAssembliesAndSetupDomain (500ms)
-		LoadAssemblies (453ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (555ms)
+		LoadAssemblies (385ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (197ms)
-			TypeCache.Refresh (176ms)
-				TypeCache.ScanAssembly (160ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (633ms)
+		AnalyzeDomain (265ms)
+			TypeCache.Refresh (239ms)
+				TypeCache.ScanAssembly (218ms)
+			ScanForSourceGeneratedMonoScriptInfo (20ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (680ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (471ms)
+		SetupLoadedEditorAssemblies (501ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (66ms)
-			ProcessInitializeOnLoadAttributes (368ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (390ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 7.32 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 4.56 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3193 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 44 unused Assets / (63.2 KB). Loaded Objects now: 3650.
-Memory consumption went from 128.3 MB to 128.2 MB.
-Total: 4.086400 ms (FindLiveObjects: 0.416700 ms CreateObjectMapping: 0.378600 ms MarkObjects: 3.161900 ms  DeleteObjects: 0.127800 ms)
+Unloading 44 unused Assets / (63.4 KB). Loaded Objects now: 3651.
+Memory consumption went from 128.6 MB to 128.5 MB.
+Total: 3.151600 ms (FindLiveObjects: 0.249500 ms CreateObjectMapping: 0.238500 ms MarkObjects: 2.566300 ms  DeleteObjects: 0.096600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -178,3 +178,59 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 20093.560761 seconds.
+  path: Assets/Textures/sci-fi-panel1
+  artifactKey: Guid(388d7f6c206b5af448373a3b5320facf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/sci-fi-panel1 using Guid(388d7f6c206b5af448373a3b5320facf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78e22fbb31f2eef38572da6ca81be50d') in 0.003205 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.537662 seconds.
+  path: Assets/Textures/sci-fi-panel1/Materials
+  artifactKey: Guid(7a91436c8fa19854f8a012d4607e0cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/sci-fi-panel1/Materials using Guid(7a91436c8fa19854f8a012d4607e0cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '782e075d1ea3247085c51f6959c75c7d') in 0.000528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.912672 seconds.
+  path: Assets/Textures
+  artifactKey: Guid(cc91ad95187859b4fb904dfcfa9fe59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures using Guid(cc91ad95187859b4fb904dfcfa9fe59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f3bf1ccce7eff7184acfd465f613347') in 0.000479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.564781 seconds.
+  path: Assets/Textures/DALL·E 2023-11-14 20.11.42 - A high-resolution, 3D space background suitable for a Unity game, featuring a breathtaking cosmic landscape. The scene includes a vibrant nebula with .png
+  artifactKey: Guid(9304064ee76bd33478df17e68e8d8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/DALL·E 2023-11-14 20.11.42 - A high-resolution, 3D space background suitable for a Unity game, featuring a breathtaking cosmic landscape. The scene includes a vibrant nebula with .png using Guid(9304064ee76bd33478df17e68e8d8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3b0430fdb1c0c3784e916adf3d99fed') in 0.077121 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 72.034071 seconds.
+  path: Assets/Textures/DALL·E 2023-11-14 20.11.42 - A high-resolution, 3D space background suitable for a Unity game, featuring a breathtaking cosmic landscape. The scene includes a vibrant nebula with .png
+  artifactKey: Guid(9304064ee76bd33478df17e68e8d8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/DALL·E 2023-11-14 20.11.42 - A high-resolution, 3D space background suitable for a Unity game, featuring a breathtaking cosmic landscape. The scene includes a vibrant nebula with .png using Guid(9304064ee76bd33478df17e68e8d8c42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdcd1e69bf4a64b735e31ad0304b2bde') in 0.101654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 25.844605 seconds.
+  path: Assets/Textures/SpaceSkybox.mat
+  artifactKey: Guid(1cf30bed1f95dc54d9e7e4ed51f1ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/SpaceSkybox.mat using Guid(1cf30bed1f95dc54d9e7e4ed51f1ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce30014f93a52178da96452e5e1dddc') in 0.042242 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 297.659023 seconds.
+  path: Assets/Textures/SpaceSkybox.mat
+  artifactKey: Guid(1cf30bed1f95dc54d9e7e4ed51f1ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/SpaceSkybox.mat using Guid(1cf30bed1f95dc54d9e7e4ed51f1ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1db4ceec0f3d819dc80fdb9be6be7cfc') in 0.069386 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
