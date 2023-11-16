@@ -36,7 +36,6 @@ public class EnemyShooter : MonoBehaviour
 
             TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, hit));
-            Debug.Log("g");
         }
     }
 

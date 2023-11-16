@@ -363,13 +363,13 @@
 "Assets/Packages/Mini First Person Controller/Scripts/Components/Zoom.cs"
 "Assets/Packages/Mini First Person Controller/Scripts/FirstPersonLook.cs"
 "Assets/Packages/Mini First Person Controller/Scripts/FirstPersonMovement.cs"
-"Assets/Scripts/EnemyAttack.cs"
 "Assets/Scripts/EnemyBrain.cs"
 "Assets/Scripts/EnemyReferences.cs"
 "Assets/Scripts/EnemyShooter.cs"
 "Assets/Scripts/LevelLoader.cs"
-"Assets/Scripts/PlaneAttack.cs"
 "Assets/Scripts/QuitGame.cs"
+"Assets/Scripts/SneakyShipAttack.cs"
+"Assets/Scripts/TigerShipAttack.cs"
 -langversion:9.0
 
 /deterministic
