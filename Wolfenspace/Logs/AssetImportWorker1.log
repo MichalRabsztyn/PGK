@@ -1,17 +1,17 @@
 Using pre-set license
 Built from '2022.3/release' branch; Version is '2022.3.12f1 (4fe6e059c7ef) revision 5236448'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'pl' Physical Memory: 16251 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'pl' Physical Memory: 28524 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe
+D:\Programy\2022.3.12f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
+D:/Repozytorium/Studia/PGK/Wolfenspace
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
@@ -57,15 +57,15 @@ Player connection [19276] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 383
 Refreshing native plugins compatible for Editor in 20.19 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.12f1 (4fe6e059c7ef)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace/Assets
+[Subsystems] Discovering subsystems at path D:/Programy/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Repozytorium/Studia/PGK/Wolfenspace/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25e2)
     Vendor:   NVIDIA
-    VRAM:     3950 MB
-    Driver:   31.0.15.3699
+    VRAM:     3977 MB
+    Driver:   31.0.15.3758
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
@@ -127,7 +127,7 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1322ms
 	BeginReloadAssembly (157ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (21ms)

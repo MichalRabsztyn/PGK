@@ -1,17 +1,17 @@
 Using pre-set license
 Built from '2022.3/release' branch; Version is '2022.3.12f1 (4fe6e059c7ef) revision 5236448'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'pl' Physical Memory: 16251 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'pl' Physical Memory: 28524 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.12f1\Editor\Unity.exe
+D:\Programy\2022.3.12f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace
+D:/Repozytorium/Studia/PGK/Wolfenspace
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -57,15 +57,15 @@ Player connection [28472] Host "[IP] 192.168.146.1 [Port] 0 [Flags] 2 [Guid] 718
 Refreshing native plugins compatible for Editor in 20.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.12f1 (4fe6e059c7ef)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/super/OneDrive/Pulpit/Unity projects/WolfenSpace/PGK/Wolfenspace/Assets
+[Subsystems] Discovering subsystems at path D:/Programy/2022.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Repozytorium/Studia/PGK/Wolfenspace/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f99)
+    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25e2)
     Vendor:   NVIDIA
-    VRAM:     3950 MB
-    Driver:   31.0.15.3699
+    VRAM:     3977 MB
+    Driver:   31.0.15.3758
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
@@ -148,7 +148,7 @@ Domain Reload Profiling: 1333ms
 		SetupLoadedEditorAssemblies (480ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (5ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (63ms)
 			ProcessInitializeOnLoadAttributes (379ms)
@@ -863,7 +863,6 @@ Unloading 35 unused Assets / (37.3 KB). Loaded Objects now: 3681.
 Memory consumption went from 210.0 MB to 210.0 MB.
 Total: 3.167700 ms (FindLiveObjects: 0.271100 ms CreateObjectMapping: 0.279100 ms MarkObjects: 2.533100 ms  DeleteObjects: 0.083000 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 

@@ -1,1 +1,33 @@
-﻿{"cameraMode":{"drawMode":24,"name":"Light Overlap","section":"Baked Global Illumination"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":false},"in2DMode":false,"pivot":{"x":-20.653165817260743,"y":7.245720386505127,"z":13.509867668151856},"rotation":{"x":-0.005101959221065044,"y":0.9900060296058655,"z":-0.03714193031191826,"w":-0.1359814703464508},"size":4.223320484161377,"orthographic":false}
+﻿{
+  "cameraMode": {
+    "drawMode": 24,
+    "name": "Light Overlap",
+    "section": "Baked Global Illumination"
+  },
+  "sceneLighting": true,
+  "audioPlay": false,
+  "sceneViewState": {
+    "m_AlwaysRefresh": false,
+    "showFog": true,
+    "showSkybox": true,
+    "showFlares": true,
+    "showImageEffects": true,
+    "showParticleSystems": true,
+    "showVisualEffectGraphs": true,
+    "m_FxEnabled": false
+  },
+  "in2DMode": false,
+  "pivot": {
+    "x": -2.6069846153259279,
+    "y": 0.24469324946403504,
+    "z": 6.2547101974487309
+  },
+  "rotation": {
+    "x": -0.0047970120795071129,
+    "y": -0.27934330701828005,
+    "z": -0.0014100584667176009,
+    "w": 0.96021968126297
+  },
+  "size": 3.1499979496002199,
+  "orthographic": false
+}
