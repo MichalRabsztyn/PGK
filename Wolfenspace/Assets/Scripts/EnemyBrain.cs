@@ -9,6 +9,8 @@ namespace GDL
     public class EnemyBrain : MonoBehaviour
     {
         public Transform player;
+        public Transform target;
+
         private EnemyReferences enemyReferences;
 
         private float pathUpdateDeadLine;
@@ -33,6 +35,9 @@ namespace GDL
             enemyReferences = GetComponent<EnemyReferences>();
             pointA.transform.parent = null;
             pointB.transform.parent = null;
+        private void Awake()
+        {
+            enemyReferences = GetComponent<EnemyReferences>();
         }
 
         void Start()
@@ -109,6 +114,19 @@ namespace GDL
         }
 
         private void LookAtTarget(Transform target)
+            if (target!=null)
+            {
+                bool inRange = Vector3.Distance(transform.position, target.position) <= shootingDistance;
+
+                if (inRange) LookAtTarget();
+                else UpdatePath();
+
+                enemyReferences.animator.SetBool("shooting", inRange);
+            }
+            enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
+        }
+
+        private void LookAtTarget()
         {
             Vector3 lookPos = target.position - transform.position;
             lookPos.y = 0;
