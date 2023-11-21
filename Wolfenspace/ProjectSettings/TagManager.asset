@@ -3,10 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Enemy
   - PointA
   - PointB
+=======
+  tags: []
+>>>>>>> parent of ad503822 (Enemies done)
   layers:
   - Default
   - TransparentFX

@@ -7,10 +7,12 @@ namespace GDL
 {
     public class EnemyBrain : MonoBehaviour
     {
-        public Transform player;
+        public Transform target;
+
         private EnemyReferences enemyReferences;
         private float pathUpdateDeadLine;
         private float shootingDistance;
+<<<<<<< HEAD
         [SerializeField] float sightRange = 5f;
         [SerializeField] LayerMask whatIsPlayer;
         [SerializeField] LayerMask obstacleLayer;
@@ -21,19 +23,24 @@ namespace GDL
         public GameObject pointB;
         private float patrolSpeed = 4;
         private bool whereGo;
+=======
+>>>>>>> parent of ad503822 (Enemies done)
         private void Awake()
         {
             enemyReferences = GetComponent<EnemyReferences>();
-            pointA.transform.parent = null;
-            pointB.transform.parent = null;
         }
         void Start()
         {
+<<<<<<< HEAD
             shootingDistance = enemyReferences.navMeshAgent.stoppingDistance;
             enemyReferences.navMeshAgent.stoppingDistance = 0;
+=======
+            shootingDistance = enemyReferences.navMeshAgent.stoppingDistance;    
+>>>>>>> parent of ad503822 (Enemies done)
         }
         void Update()
         {
+<<<<<<< HEAD
 
                 if (isPatrolling)
                 {
@@ -95,19 +102,40 @@ namespace GDL
             }
         }
         private void LookAtTarget(Transform target)
+=======
+            if (target!=null)
+            {
+                bool inRange = Vector3.Distance(transform.position, target.position) <= shootingDistance;
+
+                if (inRange) LookAtTarget();
+                else UpdatePath();
+
+                enemyReferences.animator.SetBool("shooting", inRange);
+            }
+            enemyReferences.animator.SetFloat("speed", enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude);
+        }
+
+        private void LookAtTarget()
+>>>>>>> parent of ad503822 (Enemies done)
         {
             Vector3 lookPos = target.position - transform.position;
             lookPos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0.2f);
         }
+<<<<<<< HEAD
         private void UpdatePath(Transform target)
+=======
+
+        private void UpdatePath()
+>>>>>>> parent of ad503822 (Enemies done)
         {
             if (Time.time >= pathUpdateDeadLine)
             {
                 enemyReferences.navMeshAgent.SetDestination(target.position);
             }
         }
+<<<<<<< HEAD
         private bool CheckPlayerPresence()
         {
             if (Physics.CheckSphere(transform.position, sightRange, whatIsPlayer))
@@ -130,5 +158,7 @@ namespace GDL
             if (Physics.Raycast(transform.position + offset, directionToPlayer.normalized, out hit, Mathf.Infinity, obstacleLayer)) return false;
             else return true;
         }
+=======
+>>>>>>> parent of ad503822 (Enemies done)
     }
 }

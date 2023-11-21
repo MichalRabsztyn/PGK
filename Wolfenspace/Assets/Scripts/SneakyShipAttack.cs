@@ -10,6 +10,7 @@ public class SneakyShipAttack : MonoBehaviour
     public LayerMask whatIsPlayer;
     private Vector3 explosionOffset = new Vector3(-0.8f, 1.5f, -1.5f);
     [SerializeField] GameObject particleExplosion;
+<<<<<<< HEAD
 
     [SerializeField] GameObject ExplosionAudio;
     private AudioPlay explosionSound;
@@ -24,37 +25,21 @@ public class SneakyShipAttack : MonoBehaviour
 
     public float sightRange;
     private Animator idleAnim;
+=======
+    [SerializeField] AudioSource explosionSound;
+
+    public float sightRange;
+    public bool playerInSightRange;
+>>>>>>> parent of ad503822 (Enemies done)
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        explosionSound = ExplosionAudio.GetComponent<AudioPlay>();
-        pointA.transform.parent = null;
-        pointB.transform.parent = null;
-        idleAnim = GetComponentInChildren<Animator>();
     }
     private void Update()
     {
-        if (isPatrolling)
-        {
-            idleAnim.enabled = false;
-            Patrol();
-        }
-
-        if (isChasing || CheckPlayerPresence())
-        {
-            if (!isChasing)
-            {
-                idleAnim.enabled = false;
-                isChasing = true;
-
-                pointA.GetComponent<DestroyMyself>().Destroy();
-                pointB.GetComponent<DestroyMyself>().Destroy();
-                isPatrolling = false;
-            }
-
-            ChasePlayer();
-        }
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (playerInSightRange) ChasePlayer();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -71,51 +56,12 @@ public class SneakyShipAttack : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    public void ShipDead()
+    private void ShipDead()
     {
-        AudioPlay();
-        Destroy(gameObject);
-    }
-
-    private void AudioPlay()
-    {
-        explosionSound.PlayAudio();
+        explosionSound.Play();
         GameObject explosion = Instantiate(particleExplosion, transform.position + explosionOffset, transform.rotation);
-        explosionSound.transform.parent = null;
+        Destroy(gameObject);
         Destroy(explosion, 2f);
     }
 
-    private void Patrol()
-    {
-        if (whereGo)
-        {
-            agent.SetDestination(pointA.transform.position);
-            if (Vector3.Distance(pointA.transform.position, transform.position)<0.1) whereGo = false;
-        }
-
-        else
-        {
-            agent.SetDestination(pointB.transform.position);
-            if (Vector3.Distance(pointB.transform.position, transform.position)<0.1) whereGo = true;
-        }
-    }
-
-    private bool CheckPlayerPresence()
-    {
-        if (Physics.CheckSphere(transform.position, sightRange, whatIsPlayer))
-        {
-            Vector3 direction = player.position - transform.position;
-
-            Ray ray = new Ray(transform.position, direction);
-
-            float maxDistance = direction.magnitude - 0.5f;
-
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, maxDistance, 7)) return false;
-            else return true;
-        }
-
-        return false;
-    }
 }
