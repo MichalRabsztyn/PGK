@@ -3,27 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
+  - Enemy
   - PointA
   - PointB
-  - Enemy
-=======
-  tags: []
->>>>>>> 30f5573a04aab8d9d4bed6c3766ea4d591d6a9cf
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Shootable
+  - 
   - Water
   - UI
   - Player
-<<<<<<< HEAD
-  - Obstacle
-=======
   - 
->>>>>>> 30f5573a04aab8d9d4bed6c3766ea4d591d6a9cf
   - 
   - 
   - 

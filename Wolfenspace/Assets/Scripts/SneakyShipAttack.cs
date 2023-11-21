@@ -20,10 +20,9 @@ public class SneakyShipAttack : MonoBehaviour
     public GameObject pointA;
     public GameObject pointB;
     bool whereGo = false;
-    public bool isChasing = false;
+    [HideInInspector] public bool isChasing = false;
 
     public float sightRange;
-    bool playerInSightRange;
     private Animator idleAnim;
 
     private void Awake()
@@ -68,6 +67,7 @@ public class SneakyShipAttack : MonoBehaviour
 
     public void ChasePlayer()
     {
+        idleAnim.enabled = false;
         agent.SetDestination(player.position);
     }
 
