@@ -12,6 +12,7 @@ public class TigerShipAttack : MonoBehaviour
     [SerializeField] float sightRange = 0.5f;
     [SerializeField] GameObject particleExplosion;
     [SerializeField] LayerMask whatIsPlayer;
+    [SerializeField] int damage = 2;
 
     [Header("Sounds")]
     [SerializeField] GameObject ExplosionAudio;
@@ -74,7 +75,27 @@ public class TigerShipAttack : MonoBehaviour
         {
             ShipDead();
         }
+
+
+        if (collision == null || collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        IHealth ihealth = collision.transform.GetComponent<IHealth>();
+        if (ihealth == null)
+        {
+            ihealth = collision.transform.GetComponentInParent<IHealth>();
+        }
+
+        if (ihealth != null)
+        {
+            ihealth.ReduceHp(damage);
+        }
+
+        ShipDead();
     }
+    
 
     private void ChasePlayer()
     {

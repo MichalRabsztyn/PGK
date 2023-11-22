@@ -10,6 +10,7 @@ public class SneakyShipAttack : MonoBehaviour
     public LayerMask whatIsPlayer;
     private Vector3 explosionOffset = new Vector3(0, 0.5f, 0);
     [SerializeField] GameObject particleExplosion;
+    [SerializeField] int damage = 2;
 
     [SerializeField] GameObject ExplosionAudio;
     private AudioPlay explosionSound;
@@ -61,10 +62,28 @@ public class SneakyShipAttack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (!collision.gameObject.CompareTag("Enemy"))
         {
             ShipDead();
         }
+
+        if (collision == null || collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+
+        IHealth ihealth = collision.transform.GetComponent<IHealth>();
+        if (ihealth == null)
+        {
+            ihealth = collision.transform.GetComponentInParent<IHealth>();
+        }
+
+        if (ihealth != null)
+        {
+            ihealth.ReduceHp(damage);
+        }
+
+        ShipDead();
     }
 
     public void ChasePlayer()
