@@ -3,14 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
-  - Enemy
   - PointA
   - PointB
-=======
-  tags: []
->>>>>>> parent of ad503822 (Enemies done)
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Obstacle
   - 
   - 
   - 

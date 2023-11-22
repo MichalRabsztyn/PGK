@@ -20,6 +20,8 @@ public class EnemyShooter : MonoBehaviour
 
     private EnemyReferences enemyRefrences;
 
+    [SerializeField] private AudioSource shootingAudio;
+
     private void Awake()
     {
         enemyRefrences = GetComponent<EnemyReferences>();
@@ -53,6 +55,7 @@ public class EnemyShooter : MonoBehaviour
 
     private IEnumerator SpawnTrail(TrailRenderer trail, RaycastHit hit)
     {
+        shootingAudio.Play();
         float time = 0f;
         Vector3 startPosition = trail.transform.position;
 
