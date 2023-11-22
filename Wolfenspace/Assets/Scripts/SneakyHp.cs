@@ -31,9 +31,4 @@ public class SneakyHp : MonoBehaviour, IHealth
     {
         sneakyShipAttack.ShipDead();
     }
-
-    private void Update()
-    {
-        ReduceHp(0.001f);
-    }
 }

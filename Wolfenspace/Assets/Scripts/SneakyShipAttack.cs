@@ -8,7 +8,7 @@ public class SneakyShipAttack : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsPlayer;
-    private Vector3 explosionOffset = new Vector3(-0.8f, 1.5f, -1.5f);
+    private Vector3 explosionOffset = new Vector3(0, 0.5f, 0);
     [SerializeField] GameObject particleExplosion;
 
     [SerializeField] GameObject ExplosionAudio;
@@ -81,7 +81,7 @@ public class SneakyShipAttack : MonoBehaviour
     private void AudioPlay()
     {
         explosionSound.PlayAudio();
-        GameObject explosion = Instantiate(particleExplosion, transform.position + explosionOffset, transform.rotation);
+        GameObject explosion = Instantiate(particleExplosion, player.position + player.forward + explosionOffset, player.rotation);
         explosionSound.transform.parent = null;
         Destroy(explosion, 2f);
     }
