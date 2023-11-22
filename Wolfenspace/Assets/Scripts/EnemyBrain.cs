@@ -28,6 +28,8 @@ namespace GDL
         private float patrolSpeed = 4;
         private bool whereGo;
 
+        public bool IsAlive = true;
+
         private void Awake()
         {
             enemyReferences = GetComponent<EnemyReferences>();
@@ -43,6 +45,11 @@ namespace GDL
 
         void Update()
         {
+            if (!IsAlive)
+            {
+                return;
+            }
+
             if (isPatrolling)
             {
                 patrolSpeed = (enemyReferences.navMeshAgent.desiredVelocity.sqrMagnitude/15);

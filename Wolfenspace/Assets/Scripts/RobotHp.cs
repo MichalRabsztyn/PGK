@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RobotHp : MonoBehaviour
+public class RobotHp : MonoBehaviour, IHealth
 {
     private Slider slider;
     public float maxHp = 10;
@@ -31,6 +31,7 @@ public class RobotHp : MonoBehaviour
 
     private void Dead()
     {
+        enemyBrain.IsAlive = false;
         anim.SetBool("alive", false);
         Destroy(gameObject, 5f);
     }

@@ -37,6 +37,7 @@ public class EnemyShooter : MonoBehaviour
             Debug.DrawLine(shootPoint.position, shootPoint.position + direction * 10f, Color.red, 1f);
 
             TrailRenderer trail = Instantiate(bulletTrail, gunPoint.position, Quaternion.identity);
+            trail.gameObject.layer = 8;
             StartCoroutine(SpawnTrail(trail, hit));
         }
     }

@@ -1408,7 +1408,7 @@ MonoBehaviour:
   gunPoint: {fileID: 7417410732148269406}
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   spread: {x: 0.06, y: 0.06, z: 0.06}
   bulletTrail: {fileID: 397180686281355358, guid: 15f4e6793d4ef482fa3c8a3ba7050d7e, type: 3}
   shootingAudio: {fileID: 8633482561670856481}
@@ -2928,6 +2928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8070807109511772191}
   - component: {fileID: 3677423299092238186}
+  - component: {fileID: 5271820942522196030}
   m_Layer: 0
   m_Name: Body1
   m_TagString: Untagged
@@ -3060,6 +3061,29 @@ SkinnedMeshRenderer:
     m_Center: {x: -31.982391, y: 2.5145874, z: 0.0000019073486}
     m_Extent: {x: 51.12609, y: 46.604404, z: 27.749142}
   m_DirtyAABB: 0
+--- !u!136 &5271820942522196030
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550951506884885305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 28.3
+  m_Height: 123.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 13088.203, z: 608.62164}
 --- !u!1 &8572874070632237336
 GameObject:
   m_ObjectHideFlags: 0

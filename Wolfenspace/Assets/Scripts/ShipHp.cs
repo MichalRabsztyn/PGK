@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShipHp : MonoBehaviour
+public class ShipHp : MonoBehaviour, IHealth
 {
     private Slider slider;
     public float maxHp = 2;
