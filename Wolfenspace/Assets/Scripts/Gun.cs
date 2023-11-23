@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public int weaponID = 0;
     public float fireRate = 1.0f;
     public int clipCapacity = 10;
 
@@ -17,10 +18,10 @@ public class Gun : MonoBehaviour
     private ParticleSystem muzzleFlash;
     [System.NonSerialized] public int bulletsInClip = 0;
 
-    private void Start()
+    private void Awake()
     {
         bulletSpawner = this.transform.Find("Bullet Spawner");
-        audioSource = GameObject.Find("Audio Component").GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         bulletsInClip = clipCapacity;
     }
 
@@ -39,15 +40,15 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-
-        if (audioSource != null && shootSound != null)
-        {
-            audioSource.PlayOneShot(shootSound);
-        }
-
         if (bulletsInClip > 0)
         {
+            Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+
+            if (audioSource != null && shootSound != null)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
+
             bulletsInClip--;
         }
     }

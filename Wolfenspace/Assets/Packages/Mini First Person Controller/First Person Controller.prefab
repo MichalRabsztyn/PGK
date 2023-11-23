@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 1169495309807972543}
   - component: {fileID: 4494554022836309938}
   - component: {fileID: 3911798490237289589}
+  - component: {fileID: 4784698016189084173}
   m_Layer: 6
   m_Name: First Person Controller
   m_TagString: Player
@@ -619,7 +620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0f85eb4a834754ba11d2c99e034366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 5974803044624994229, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
 --- !u!65 &3911798490237289589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -641,6 +641,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.8, z: 1}
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &4784698016189084173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4849f4104bff7244d9f0f11cda2a46c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 2845833133398855351, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
+  numberOfKeys: 0
+  currentEquipmentSlot: 0
+  weaponChangeTime: 0
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0
