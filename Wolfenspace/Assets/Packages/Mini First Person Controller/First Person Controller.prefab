@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guns:
-  - {fileID: 2845833133398855351, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
+  - {fileID: 5974803044624994229, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
   numberOfKeys: 0
   currentEquipmentSlot: 0
   weaponChangeTime: 0
