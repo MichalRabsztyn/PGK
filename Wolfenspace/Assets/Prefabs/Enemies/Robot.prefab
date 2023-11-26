@@ -1355,6 +1355,7 @@ MonoBehaviour:
   isPatrolling: 0
   pointA: {fileID: 2511328198110863166}
   pointB: {fileID: 8916430599252772830}
+  IsAlive: 1
 --- !u!114 &5970665277590133378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,7 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea92eaeef1fd83845b0ef99bbdd85a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 100
   hp: 0
   anim: {fileID: 0}
 --- !u!1 &4301272892661449214

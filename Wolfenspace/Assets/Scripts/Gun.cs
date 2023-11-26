@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Gun : MonoBehaviour
     public float fireRate = 1.0f;
     public int clipCapacity = 10;
 
+    public GameObject gunHUD;
     public GameObject bulletPrefab;
     public AudioClip shootSound;
     public AudioClip emptyClipSound;
@@ -23,6 +25,11 @@ public class Gun : MonoBehaviour
         bulletSpawner = this.transform.Find("Bullet Spawner");
         audioSource = GetComponent<AudioSource>();
         bulletsInClip = clipCapacity;
+
+        if (gunHUD)
+        {
+            gunHUD.GetComponent<Text>().text = bulletsInClip.ToString();
+        }
     }
 
     public void Shoot()
@@ -50,6 +57,11 @@ public class Gun : MonoBehaviour
             }
 
             bulletsInClip--;
+
+            if (gunHUD)
+            {
+                gunHUD.GetComponent<Text>().text = bulletsInClip.ToString();
+            }
         }
     }
 

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    public GameObject[] guns;
+    public List<GameObject> guns;
     public int numberOfKeys = 0;
     public int currentEquipmentSlot = 0;
     public float weaponChangeTime = 1.0f;
 
     private float nextChangeTime;
     private Shooting shooting;
-    private GameObject weaponSlot;
+    [System.NonSerialized] public GameObject weaponSlot;
 
     public void Start()
     {
@@ -20,14 +20,14 @@ public class Equipment : MonoBehaviour
     }
     public void Update()
     {
-        if (guns.Length >= 2)
+        if (guns.Count >= 2)
         {
             if (Time.time >= nextChangeTime)
             {
                 if (Input.GetKey(KeyCode.E))
                 {
                     currentEquipmentSlot++;
-                    if (currentEquipmentSlot >= guns.Length)
+                    if (currentEquipmentSlot >= guns.Count)
                     {
                         currentEquipmentSlot = 0;
                     }
@@ -40,7 +40,7 @@ public class Equipment : MonoBehaviour
                     currentEquipmentSlot--;
                     if (currentEquipmentSlot < 0)
                     {
-                        currentEquipmentSlot = guns.Length - 1;
+                        currentEquipmentSlot = guns.Count - 1;
                     }
 
                     ChangeWeaponSlot(currentEquipmentSlot);
@@ -56,18 +56,21 @@ public class Equipment : MonoBehaviour
         {
             if (weaponSlot)
             {
-                GameObject weapon = Instantiate(guns[weaponIndex].gameObject, weaponSlot.transform.position, weaponSlot.transform.rotation);
+                //GameObject weapon = Instantiate(guns[weaponIndex].gameObject, weaponSlot.transform.position, weaponSlot.transform.rotation);
+                GameObject weapon = guns[weaponIndex];
                 if (weapon)
                 {
                     foreach (Transform child in weaponSlot.transform)
                     {
-                        GameObject.Destroy(child.gameObject);
+                        //GameObject.Destroy(child.gameObject);
+                        child.gameObject.SetActive(false);
                     }
 
                     shooting.weapon = guns[weaponIndex].gameObject;
+                    shooting.weapon.SetActive(true);
                     shooting.gun = weapon.GetComponent<Gun>();
 
-                    weapon.transform.parent = weaponSlot.transform;
+                    //weapon.transform.parent = weaponSlot.transform;
                 }
 
             }

@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
         if (weaponSlot)
         {
             equipment = GetComponent<Equipment>();
-            if (equipment && equipment.guns.Length >= 0)
+            if (equipment && equipment.guns.Count >= 0)
             {
                 weapon = Instantiate(equipment.guns[0], weaponSlot.transform.position, weaponSlot.transform.rotation);
                 if (weapon)
@@ -22,6 +22,7 @@ public class Shooting : MonoBehaviour
                     gun = weapon.GetComponent<Gun>();
                     weapon.transform.parent = weaponSlot.transform;
                 }
+                equipment.guns[0] = weapon;
             }
         }     
     }
