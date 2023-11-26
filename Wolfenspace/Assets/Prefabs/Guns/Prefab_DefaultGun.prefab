@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbcafae9e28b1e479973cad35d0b10d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponID: 0
   fireRate: 2
-  clipCapacity: 10
+  clipCapacity: 100
   bulletPrefab: {fileID: 8774217015827439481, guid: ea719cf1d3022de4c9aae0289b1be3b9, type: 3}
   shootSound: {fileID: 8300000, guid: 8a5cbbee9850ada4a894f5b0826a6a7c, type: 3}
   emptyClipSound: {fileID: 8300000, guid: 75f260bc777463441b1e37d8c9a37ca3, type: 3}

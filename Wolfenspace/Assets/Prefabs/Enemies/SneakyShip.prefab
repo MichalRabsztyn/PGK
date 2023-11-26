@@ -67,7 +67,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8020431900751118320}
   - {fileID: 7166881036364377863}
   - {fileID: 8258893648369577354}
   - {fileID: 2868865479757998550}
@@ -91,11 +90,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   particleExplosion: {fileID: 8038344524183138613, guid: 0277167a12290af47801444830a2be97, type: 3}
+  damage: 2
   ExplosionAudio: {fileID: 3934186294059871595}
   patrolSpeed: 5
-  isPatrolling: 1
+  isPatrolling: 0
   pointA: {fileID: 5991162015391612344}
   pointB: {fileID: 8487061193980217320}
+  isChasing: 0
   sightRange: 10
 --- !u!195 &5936828461067104022
 NavMeshAgent:
@@ -187,7 +188,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3889502092316602440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 2
-  hp: 0
+  hp: 2
 --- !u!1 &1920635790767343400
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,17 +229,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920635790767343400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.007}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0.044723105, y: 0.997865, z: -0.011225127, w: -0.046253756}
+  m_LocalPosition: {x: 0, y: 0, z: 0.014396155}
+  m_LocalScale: {x: 0.0019999987, y: 0.002, z: 0.001999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3011172406561852186}
-  m_Father: {fileID: 5314499106057548236}
+  m_Father: {fileID: 7166881036364377863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.037, y: 1.905}
+  m_AnchoredPosition: {x: 0.21377644, y: 0.100995064}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8412058541330236564
@@ -847,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 452004, guid: 81a45116981bb514c866bab4841bb1fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 452004, guid: 81a45116981bb514c866bab4841bb1fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -896,7 +897,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9566272, guid: 81a45116981bb514c866bab4841bb1fe, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 452004, guid: 81a45116981bb514c866bab4841bb1fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8020431900751118320}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 192754, guid: 81a45116981bb514c866bab4841bb1fe, type: 3}
       insertIndex: -1

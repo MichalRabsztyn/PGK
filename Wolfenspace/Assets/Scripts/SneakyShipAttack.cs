@@ -62,7 +62,7 @@ public class SneakyShipAttack : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             ShipDead();
         }
@@ -82,8 +82,6 @@ public class SneakyShipAttack : MonoBehaviour
         {
             ihealth.ReduceHp(damage);
         }
-
-        ShipDead();
     }
 
     public void ChasePlayer()

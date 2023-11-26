@@ -18,7 +18,7 @@ public class SneakyHp : MonoBehaviour, IHealth
         slider.value = 1;
         hp = maxHp;
     }
-    public void ReduceHp(float hp)
+    public void ReduceHp (float hp)
     {
         this.hp -= hp;
         slider.value -= hp/maxHp;
