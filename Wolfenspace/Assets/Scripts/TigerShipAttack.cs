@@ -118,18 +118,34 @@ public class TigerShipAttack : MonoBehaviour
 
     private void Patrol()
     {
-        if(whereGo)
+        if (whereGo)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, patrolSpeed*Time.deltaTime);
-            transform.forward = (pointA.transform.position - transform.position);
-            if (transform.position == pointA.transform.position) whereGo = false;
+            Vector3 targetDirection = pointA.transform.position - transform.position;         
+            if (targetDirection != Vector3.zero)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, pointA.transform.position, patrolSpeed * Time.deltaTime);
+                transform.forward = targetDirection.normalized;
+            }
+
+            if (transform.position == pointA.transform.position)
+            {
+                whereGo = false;
+            }
         }
-            
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, patrolSpeed*Time.deltaTime);
-            transform.forward = (pointB.transform.position - transform.position);
-            if (transform.position == pointB.transform.position) whereGo = true;
+            Vector3 targetDirection = pointB.transform.position - transform.position;
+
+            if (targetDirection != Vector3.zero)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, pointB.transform.position, patrolSpeed * Time.deltaTime);
+                transform.forward = targetDirection.normalized;
+            }
+
+            if (transform.position == pointB.transform.position)
+            {
+                whereGo = true;
+            }
         }
     }
 

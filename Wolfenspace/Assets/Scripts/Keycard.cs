@@ -6,7 +6,7 @@ public class Keycard : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        Equipment equipment = other.GetComponent<Equipment>();
+        Inventory equipment = other.GetComponent<Inventory>();
         if (equipment != null)
         {
             equipment.numberOfKeys++;

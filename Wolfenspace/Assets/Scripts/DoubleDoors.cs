@@ -18,7 +18,7 @@ public class DoubleDoors : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        Equipment equipment = other.GetComponent<Equipment>();
+        Inventory equipment = other.GetComponent<Inventory>();
         if (equipment != null)
         {
             if (equipment.numberOfKeys > 0)

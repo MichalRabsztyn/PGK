@@ -21,8 +21,16 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2845833133398855351, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
+      propertyPath: weaponID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845833133398855351, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
       propertyPath: clipCapacity
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2845833133398855351, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
+      propertyPath: usesPerSecond
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3599189142379096651, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
       propertyPath: m_LocalScale.y

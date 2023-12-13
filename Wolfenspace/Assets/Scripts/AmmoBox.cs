@@ -8,12 +8,12 @@ public class AmmoBox : MonoBehaviour
     public int ammoRefillAmount = 10; 
     private void OnCollisionEnter(Collision collision)
     {
-        Shooting shooting = collision.gameObject.GetComponent<Shooting>();
-        if (collision.gameObject.tag == "Player" && shooting != null && shooting.gun != null)
+        Attack attack = collision.gameObject.GetComponent<Attack>();
+        if (collision.gameObject.tag == "Player" && attack != null && attack.weapon != null)
         {
-            if (shooting.gun.bulletsInClip < shooting.gun.clipCapacity)
+            //if (attack.weapon.bulletsInClip < attack.weapon.clipCapacity)
             {
-                shooting.gun.RefillAmmo(ammoRefillAmount);
+                //attack.weapon.RefillAmmo(ammoRefillAmount);
                 Destroy(this.gameObject);
             }
         }

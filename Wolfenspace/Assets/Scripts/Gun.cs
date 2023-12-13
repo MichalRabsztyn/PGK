@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Gun : MonoBehaviour
+public class Gun : Weapon
 {
-    public int weaponID = 0;
     public float fireRate = 1.0f;
     public int clipCapacity = 10;
+    public int clipsize = 10;
 
     public GameObject gunHUD;
     public GameObject bulletPrefab;
@@ -34,16 +34,16 @@ public class Gun : MonoBehaviour
 
     public void Shoot()
     {
-        if(!bulletSpawner) 
-        { 
-            return;
-        }
-        if(!bulletPrefab)
+        if (!bulletSpawner)
         {
             return;
-        } 
-        if(!emptyClipSound) 
-        { 
+        }
+        if (!bulletPrefab)
+        {
+            return;
+        }
+        if (!emptyClipSound)
+        {
             return;
         }
 
@@ -74,6 +74,13 @@ public class Gun : MonoBehaviour
         else
         {
             bulletsInClip = bulletsInClip + amount;
-        }       
+        }
+    }
+
+    override public bool UseWeapon() 
+    {
+        Shoot();
+
+        return true;
     }
 }

@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class WeaponDepot : MonoBehaviour
 {
-    public GameObject weapon;
+    public Weapon weaponPrefab;
+    public bool bRespawnWeapon = false;
+    public float weaponRespawnDelay = 5.0f;
+
     private GameObject weaponInstance;
     void Start()
     {
-        weaponInstance = Instantiate(weapon, this.transform.position, this.transform.rotation);
+        if (weaponPrefab == null) 
+        { 
+            return;
+        }
+
+        weaponInstance = Instantiate(weaponPrefab.gameObject, this.transform.position, this.transform.rotation);
         if (weaponInstance)
         {
             weaponInstance.transform.parent = this.transform;
@@ -17,25 +25,53 @@ public class WeaponDepot : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Equipment equipment = other.GetComponent<Equipment>();
-        if (equipment != null)
+        Inventory equipment = other.GetComponent<Inventory>();
+        if (equipment)
         {
-
-            GameObject weaponForPlayer = Instantiate(weapon, equipment.weaponSlot.transform.position, equipment.weaponSlot.transform.rotation);
-
-            if (weaponForPlayer)
+            if (weaponPrefab)
             {
-                weaponForPlayer.transform.parent = equipment.weaponSlot.transform;
-                weaponForPlayer.gameObject.SetActive(false);
+                foreach (Weapon weapon in equipment.weapons)
+                {
+                    if (weapon.weaponID == weaponPrefab.weaponID)
+                    {
+                        return;
+                    }
+                }
 
-                equipment.guns.Add(weaponForPlayer);
-            }
-            foreach (Transform child in transform)
-            {
-                Destroy(child.gameObject);
-            }
+                GameObject weaponForPlayer = Instantiate(weaponPrefab.gameObject, equipment.weaponSlot.transform.position, equipment.weaponSlot.transform.rotation);
 
-            Destroy(gameObject);
+                if (weaponForPlayer)
+                {
+                    weaponForPlayer.transform.parent = equipment.weaponSlot.transform;
+                    weaponForPlayer.gameObject.SetActive(false);
+
+                    equipment.weapons.Add(weaponForPlayer.GetComponent<Weapon>());
+                }
+
+                foreach (Transform child in transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                if (bRespawnWeapon)
+                {
+                    Invoke("RespawnWeapon", weaponRespawnDelay);
+                }
+            }
+        }
+    }
+
+    void RespawnWeapon()
+    {
+        if (weaponPrefab == null)
+        {
+            return;
+        }
+
+        weaponInstance = Instantiate(weaponPrefab.gameObject, this.transform.position, this.transform.rotation);
+        if (weaponInstance)
+        {
+            weaponInstance.transform.parent = this.transform;
         }
     }
 }
