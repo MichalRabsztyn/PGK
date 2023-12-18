@@ -157,7 +157,7 @@ namespace GDL
             Vector3 directionToPlayer = player.transform.position  - transform.position;
             
             RaycastHit hit;
-            if (Physics.Raycast(transform.position + offset, directionToPlayer.normalized, out hit, Mathf.Infinity, obstacleLayer)) return false;
+            if (Physics.Raycast(transform.position + offset, directionToPlayer.normalized, out hit, directionToPlayer.magnitude, obstacleLayer)) return false;
             else return true;
         }
 
