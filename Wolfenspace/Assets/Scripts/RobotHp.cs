@@ -69,7 +69,7 @@ public class RobotHp : MonoBehaviour, IHealth
     private IEnumerator Flash(Renderer renderer, Material material, float flashDuration)
     {
         // Flash to red
-        material.color = Color.red;
+        material.color = new Color(1.0f, 0.298f, 0.298f, 1.0f);
 
         // Wait a bit and then start fading back to the original color
         yield return new WaitForSeconds(flashDuration / 2);
