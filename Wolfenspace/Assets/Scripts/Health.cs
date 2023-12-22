@@ -8,14 +8,18 @@ public class Health : MonoBehaviour, IHealth
 
     public UnityEvent OnHealthChanged;
     public UnityEvent OnDeath;
+    private DamageEffect damageEffect;
 
     void Start()
     {
         currentHealth = maxHealth;
+        damageEffect = GetComponentInChildren<DamageEffect>();
     }
 
     public void ReduceHp(float damage)
     {
+        damageEffect.StartEffect();
+
         currentHealth -= damage;
 
         OnHealthChanged.Invoke();
