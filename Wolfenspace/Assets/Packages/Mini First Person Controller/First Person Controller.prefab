@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceThreshold: 0.15
-  isGrounded: 0
+  isGrounded: 1
 --- !u!1 &1593727746557118
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +369,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2616492388927670404}
-  - {fileID: 8781062472411082186}
   m_Father: {fileID: 4207293392497186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20437472682476688
@@ -512,6 +511,7 @@ Transform:
   - {fileID: 4773208539257838}
   - {fileID: 687180948}
   - {fileID: 7457488449323958733}
+  - {fileID: 8781062472411082186}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &54063890643546284
@@ -653,11 +653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4849f4104bff7244d9f0f11cda2a46c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guns:
-  - {fileID: 5974803044624994229, guid: 468d2a897a9d0484aba79b116480baad, type: 3}
+  weapons: []
   numberOfKeys: 0
-  currentEquipmentSlot: 0
-  weaponChangeTime: 0
+  indexOfSlotInUse: 0
+  weaponChangeCooldown: 1
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1628,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1066587103768998176}
-  m_Father: {fileID: 4490257326247362}
+  m_Father: {fileID: 4207293392497186}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

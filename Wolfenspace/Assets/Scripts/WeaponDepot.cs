@@ -5,10 +5,12 @@ using UnityEngine;
 public class WeaponDepot : MonoBehaviour
 {
     public Weapon weaponPrefab;
-    public bool bRespawnWeapon = false;
+    public bool shouldRespawnWeapon = false;
     public float weaponRespawnDelay = 5.0f;
 
+    private GameObject weaponDisplaySlot;
     private GameObject weaponInstance;
+
     void Start()
     {
         if (weaponPrefab == null) 
@@ -16,15 +18,27 @@ public class WeaponDepot : MonoBehaviour
             return;
         }
 
+        weaponDisplaySlot = GameObject.Find("WeaponDisplaySlot");
+        if (weaponDisplaySlot == null)
+        {
+            return;
+        }
+
         weaponInstance = Instantiate(weaponPrefab.gameObject, this.transform.position, this.transform.rotation);
         if (weaponInstance)
         {
-            weaponInstance.transform.parent = this.transform;
+            weaponInstance.transform.parent = weaponDisplaySlot.transform;
+            weaponInstance.transform.localPosition = weaponDisplaySlot.transform.localPosition;
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        if (!weaponInstance.activeSelf)
+        {
+            return;
+        }
+
         Inventory equipment = other.GetComponent<Inventory>();
         if (equipment)
         {
@@ -50,10 +64,10 @@ public class WeaponDepot : MonoBehaviour
 
                 foreach (Transform child in transform)
                 {
-                    Destroy(child.gameObject);
+                    weaponInstance.SetActive(false);
                 }
 
-                if (bRespawnWeapon)
+                if (shouldRespawnWeapon)
                 {
                     Invoke("RespawnWeapon", weaponRespawnDelay);
                 }
@@ -68,10 +82,6 @@ public class WeaponDepot : MonoBehaviour
             return;
         }
 
-        weaponInstance = Instantiate(weaponPrefab.gameObject, this.transform.position, this.transform.rotation);
-        if (weaponInstance)
-        {
-            weaponInstance.transform.parent = this.transform;
-        }
+        weaponInstance.SetActive(true);
     }
 }

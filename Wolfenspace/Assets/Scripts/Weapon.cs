@@ -6,17 +6,13 @@ public class Weapon : MonoBehaviour
 {
     public int usesPerSecond = 1;
     public int weaponID = 0;
-    public GameObject weaponModel;
+
+    [System.NonSerialized] public AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public virtual bool UseWeapon() { return false; }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

@@ -215,7 +215,7 @@ MonoBehaviour:
   fireRate: 2
   clipCapacity: 10
   clipsize: 10
-  gunHUD: {fileID: 0}
+  gunHUD: {fileID: 7298091441172582936}
   bulletPrefab: {fileID: 8774217015827439481, guid: ea719cf1d3022de4c9aae0289b1be3b9, type: 3}
   shootSound: {fileID: 8300000, guid: 8a5cbbee9850ada4a894f5b0826a6a7c, type: 3}
   emptyClipSound: {fileID: 8300000, guid: 75f260bc777463441b1e37d8c9a37ca3, type: 3}

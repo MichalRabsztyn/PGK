@@ -81,6 +81,8 @@ namespace GDL
                     isChasing = true;
                 }
 
+                if (!player) return;
+
                 bool inRange = Vector3.Distance(transform.position, player.position) <= shootingDistance;
 
                 //if (inRange && CanSeePlayer()) LookAtTarget(player);

@@ -5,17 +5,39 @@ using UnityEngine;
 
 public class AmmoBox : MonoBehaviour
 {
-    public int ammoRefillAmount = 10; 
-    private void OnCollisionEnter(Collision collision)
+    public int ammoRefillAmount = 10;
+    public bool shouldRespawnAmmoBox = true;
+    public float ammoBoxRespawnDelay = 5.0f;
+
+    public GameObject AmmoBoxModel;
+
+    private void OnTriggerEnter(Collider other)
     {
-        Attack attack = collision.gameObject.GetComponent<Attack>();
-        if (collision.gameObject.tag == "Player" && attack != null && attack.weapon != null)
+        if(!AmmoBoxModel.activeSelf)
         {
-            //if (attack.weapon.bulletsInClip < attack.weapon.clipCapacity)
+            return; 
+        }
+
+        Attack attack = other.gameObject.GetComponent<Attack>();
+        if (other.gameObject.tag == "Player" && attack != null && attack.weapon != null)
+        {   
+            Gun gun = attack.weapon as Gun;
+            if (gun.bulletsInClip < gun.clipCapacity)
             {
-                //attack.weapon.RefillAmmo(ammoRefillAmount);
-                Destroy(this.gameObject);
+                gun.RefillAmmo(ammoRefillAmount);
+
+                AmmoBoxModel?.gameObject.SetActive(false);
+               
+                if (shouldRespawnAmmoBox)
+                {
+                    Invoke("RespawnAmmoBoxModel", ammoBoxRespawnDelay);
+                }
             }
         }
+    }
+
+    private void RespawnAmmoBoxModel()
+    {
+        AmmoBoxModel?.gameObject.SetActive(true);
     }
 }

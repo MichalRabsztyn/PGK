@@ -15,36 +15,33 @@ public class Gun : Weapon
     public AudioClip shootSound;
     public AudioClip emptyClipSound;
 
-    [System.NonSerialized] public AudioSource audioSource;
     private Transform bulletSpawner;
     private ParticleSystem muzzleFlash;
     [System.NonSerialized] public int bulletsInClip = 0;
+    private TMPro.TextMeshProUGUI ammoText;
 
     private void Awake()
     {
         bulletSpawner = this.transform.Find("Bullet Spawner");
-        audioSource = GetComponent<AudioSource>();
+       
         bulletsInClip = clipCapacity;
 
         if (gunHUD)
         {
-            gunHUD.GetComponent<Text>().text = bulletsInClip.ToString();
+            ammoText = gunHUD.GetComponent<TMPro.TextMeshProUGUI>();
+            ammoText.text = bulletsInClip.ToString("D3");
         }
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
         if (!bulletSpawner)
         {
-            return;
+            return false; 
         }
         if (!bulletPrefab)
         {
-            return;
-        }
-        if (!emptyClipSound)
-        {
-            return;
+            return false;
         }
 
         if (bulletsInClip > 0)
@@ -58,10 +55,18 @@ public class Gun : Weapon
 
             bulletsInClip--;
 
-            if (gunHUD)
+            ammoText.text = bulletsInClip.ToString("D3");
+
+            return true;
+        }
+        else
+        {
+            if(emptyClipSound != null)
             {
-                gunHUD.GetComponent<Text>().text = bulletsInClip.ToString();
+                audioSource.PlayOneShot(emptyClipSound);
             }
+            
+            return false;
         }
     }
 
@@ -75,12 +80,12 @@ public class Gun : Weapon
         {
             bulletsInClip = bulletsInClip + amount;
         }
+
+        ammoText.text = bulletsInClip.ToString("D3");
     }
 
     override public bool UseWeapon() 
     {
-        Shoot();
-
-        return true;
+        return Shoot();
     }
 }

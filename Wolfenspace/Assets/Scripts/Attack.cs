@@ -7,10 +7,11 @@ public class Attack : MonoBehaviour
     [System.NonSerialized] public GameObject weaponModel;
     [System.NonSerialized] public Weapon weapon;
     private Inventory inventory;
+    private WeaponMovementController weaponMovementController;
 
-    void Start()
+    private void Start()
     {
-           
+        weaponMovementController = GetComponentInChildren<WeaponMovementController>();
     }
 
     void Update()
@@ -19,31 +20,18 @@ public class Attack : MonoBehaviour
         {
             if (Time.time >= nextFireTime)
             {
-                if(weapon == null)
-                {
-                    return;
-                }
-
-                /*if (weapon.bulletsInClip <= 0 && weapon.audioSource != null && weapon.emptyClipSound != null)
-                {
-                    weapon.audioSource.PlayOneShot(weapon.emptyClipSound);
-                }
-                else
-                {
-                    Shoot();
-                }  */ 
-                
-                
-
-                nextFireTime = Time.time + 1f / UseWeapon();
+                float usesPerSecond = UseWeapon();
+                nextFireTime = Time.time + 1f / usesPerSecond;
             }
         }
+        weaponMovementController?.HandleRecoil(false);
     }
 
     float UseWeapon()
     {
         if (weapon.UseWeapon())
         {
+            weaponMovementController?.HandleRecoil(true);
             return weapon.usesPerSecond;
         }
         else
