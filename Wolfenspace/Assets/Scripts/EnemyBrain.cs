@@ -74,8 +74,10 @@ namespace GDL
             {
                 if(!isChasing) //things to do once
                 {
-                    pointA.GetComponent<DestroyMyself>().Destroy();
-                    pointB.GetComponent<DestroyMyself>().Destroy();
+                    if(pointA)
+                        pointA.GetComponent<DestroyMyself>().Destroy();
+                    if(pointB)
+                        pointB.GetComponent<DestroyMyself>().Destroy();
                     enemyReferences.navMeshAgent.stoppingDistance = shootingDistance;
                     isPatrolling = false;
                     isChasing = true;
@@ -161,6 +163,15 @@ namespace GDL
             RaycastHit hit;
             if (Physics.Raycast(transform.position + offset, directionToPlayer.normalized, out hit, directionToPlayer.magnitude, obstacleLayer)) return false;
             else return true;
+        }
+
+        public void StopRobot()
+        {
+            isChasing = false;
+            enemyReferences.animator.SetFloat("speed", 0f);
+            enemyReferences.animator.SetBool("shooting", false);
+            //enemyReferences.navMeshAgent.stoppingDistance = 100000f;
+            //enemyReferences.navMeshAgent.stoppingDistance = shootingDistance;
         }
 
     }

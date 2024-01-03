@@ -49,6 +49,7 @@ public class RobotHp : MonoBehaviour, IHealth
 
         if (this.hp<0) Dead();
         enemyBrain.isChasing = true;
+        enemyBrain.isPatrolling = false;
     }
 
     private void Dead()

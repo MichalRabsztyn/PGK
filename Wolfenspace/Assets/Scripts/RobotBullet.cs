@@ -5,7 +5,7 @@ using UnityEngine;
 public class RobotBullet : MonoBehaviour
 {
     [SerializeField] int damage = 1;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision == null || collision.gameObject.CompareTag("Enemy"))
         {
@@ -23,6 +23,6 @@ public class RobotBullet : MonoBehaviour
             ihealth.ReduceHp(damage);
         }
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }

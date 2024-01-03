@@ -8,7 +8,7 @@ public class SneakyShipAttack : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     public LayerMask whatIsPlayer;
-    private Vector3 explosionOffset = new Vector3(0, 0.5f, 0);
+    private Vector3 explosionOffset = new Vector3(0, 1.5f, 0);
     [SerializeField] GameObject particleExplosion;
     [SerializeField] int damage = 2;
 
@@ -91,14 +91,14 @@ public class SneakyShipAttack : MonoBehaviour
 
     public void ShipDead()
     {
-        AudioPlay();
+        explosionSound.PlayAudio();
+        ExplosionEffect();
         Destroy(gameObject);
     }
 
-    private void AudioPlay()
+    private void ExplosionEffect()
     {
-        explosionSound.PlayAudio();
-        GameObject explosion = Instantiate(particleExplosion, player.position + player.forward + explosionOffset, player.rotation);
+        GameObject explosion = Instantiate(particleExplosion, transform.position + explosionOffset, player.rotation);
         explosionSound.transform.parent = null;
         Destroy(explosion, 2f);
     }
@@ -108,13 +108,13 @@ public class SneakyShipAttack : MonoBehaviour
         if (whereGo)
         {
             agent.SetDestination(pointA.transform.position);
-            if (Vector3.Distance(pointA.transform.position, transform.position)<0.1) whereGo = false;
+            if (Vector3.Distance(pointA.transform.position, transform.position)<0.2) whereGo = false;
         }
 
         else
         {
             agent.SetDestination(pointB.transform.position);
-            if (Vector3.Distance(pointB.transform.position, transform.position)<0.1) whereGo = true;
+            if (Vector3.Distance(pointB.transform.position, transform.position)<0.2) whereGo = true;
         }
     }
 

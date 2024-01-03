@@ -273,17 +273,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   atackSpeed: 12
-  sightRange: 12
+  sightRange: 20
   particleExplosion: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
   damage: 2
   ExplosionAudio: {fileID: 5783439953341200819}
   StartAudio: {fileID: 6276665759421953507}
   isChasing: 0
   patrolSpeed: 4
-  isPatrolling: 1
+  isPatrolling: 0
   pointA: {fileID: 2058323618471280699}
   pointB: {fileID: 5123705688221687800}
 --- !u!54 &5815837599210355438

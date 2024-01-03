@@ -12,6 +12,7 @@ public class TigerShipAttack : MonoBehaviour
     [SerializeField] float sightRange = 0.5f;
     [SerializeField] GameObject particleExplosion;
     [SerializeField] LayerMask whatIsPlayer;
+    [SerializeField] LayerMask obstacleLayer;
     [SerializeField] int damage = 2;
 
     [Header("Sounds")]
@@ -51,13 +52,13 @@ public class TigerShipAttack : MonoBehaviour
             Patrol();
         }
 
-        if (isChasing || CheckPlayerPresence())
+        if (isChasing || (CheckPlayerPresence() && CanSeePlayer()))
         {          
             if (!isChasing) //code in this if executes only once
             {
                 idleAnim.enabled = false;
                 startSound.PlayAudio();
-                rb.AddForce(transform.right*4f, ForceMode.VelocityChange); //small effect on spaceship starting
+                rb.AddForce(transform.right*5f, ForceMode.VelocityChange); //small effect on spaceship starting
                 isChasing = true;
 
                 pointA.GetComponent<DestroyMyself>().Destroy();
@@ -166,6 +167,16 @@ public class TigerShipAttack : MonoBehaviour
         }
 
         return false;
+    }
+
+    bool CanSeePlayer()
+    {
+        Vector3 offset = new Vector3(0, 1.5f, 0);
+        Vector3 directionToPlayer = player.transform.position  - transform.position;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + offset, directionToPlayer.normalized, out hit, directionToPlayer.magnitude, obstacleLayer)) return false;
+        else return true;
     }
 
 }

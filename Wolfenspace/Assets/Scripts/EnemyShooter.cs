@@ -68,7 +68,10 @@ public class EnemyShooter : MonoBehaviour
             yield return null;
         }
 
-        trail.transform.position = hit.point;
-        Destroy( trail.gameObject, trail.time );
+        if(trail)
+        {
+            trail.transform.position = hit.point;
+            Destroy(trail.gameObject, trail.time);
+        }
     }
 }
