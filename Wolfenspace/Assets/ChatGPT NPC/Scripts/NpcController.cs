@@ -14,6 +14,8 @@ public class NpcController : MonoBehaviour
     [Space]
     [Range(0.01f, 10f)]
     [SerializeField] private float rotationSpeed = 1.0f;
+    [Range(0f, 5f)]
+    [SerializeField] private float interactionDistance = 3.0f;
 
     [Space]
     [SerializeField] private NpcState state;
@@ -28,7 +30,7 @@ public class NpcController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(conversationKey))
+        if (Input.GetKeyUp(conversationKey) && Vector3.Distance(transform.position, Camera.main.transform.position) < interactionDistance)
         {
             ChangeState(NpcState.Interaction);
             Interact();

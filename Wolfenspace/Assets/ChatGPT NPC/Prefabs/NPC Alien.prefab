@@ -1368,8 +1368,9 @@ MonoBehaviour:
     ton powinien by\u0107 przekonuj\u0105cy i autentyczny, odpowiedni dla postaci
     do\u015Bwiadczonego lidera. Odpowiadaj w maksymalnie 4 zdaniach.\r"
   rotationSpeed: 3
+  interactionDistance: 3
   state: 0
-  conversationKey: 49
+  conversationKey: 101
 --- !u!114 &8025048792585600095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,6 +2284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3166793373616532462}
   - component: {fileID: 7597194707540972490}
+  - component: {fileID: 8122025670174125746}
   m_Layer: 0
   m_Name: Alien Mesh
   m_TagString: Untagged
@@ -2328,6 +2330,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &8122025670174125746
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091929380399877326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &9222125910995174331
 GameObject:
   m_ObjectHideFlags: 0
