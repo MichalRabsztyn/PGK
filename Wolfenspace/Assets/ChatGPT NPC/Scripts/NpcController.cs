@@ -58,10 +58,5 @@ public class NpcController : MonoBehaviour
     {
         state = newState;
     }
-
-    public void LookAtPlayer()
-    {
-
-    }
 }
 public enum NpcState { Idle, Interaction }
