@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Gun : Weapon
 {
     public float fireRate = 1.0f;
@@ -18,8 +17,8 @@ public class Gun : Weapon
     private Transform bulletSpawner;
     private ParticleSystem muzzleFlash;
     [System.NonSerialized] public int bulletsInClip = 0;
-    private TMPro.TextMeshProUGUI ammoText;
-
+    [System.NonSerialized] public TMPro.TextMeshProUGUI ammoText;
+    public LayerMask layerMask;
     private void Awake()
     {
         bulletSpawner = this.transform.Find("Bullet Spawner");
@@ -46,18 +45,25 @@ public class Gun : Weapon
 
         if (bulletsInClip > 0)
         {
-            Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-
-            if (audioSource != null && shootSound != null)
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, float.MaxValue, layerMask))
             {
-                audioSource.PlayOneShot(shootSound);
+                GameObject bulletGameObject = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+                Bullet bullet = bulletGameObject.GetComponent<Bullet>();
+                bullet.OnSpawn(hit);
+           
+                if (audioSource != null && shootSound != null)
+                {
+                    audioSource.PlayOneShot(shootSound);
+                }
+
+                bulletsInClip--;
+
+                ammoText.text = bulletsInClip.ToString("D3");
+
+                return true;
             }
 
-            bulletsInClip--;
-
-            ammoText.text = bulletsInClip.ToString("D3");
-
-            return true;
+            return false;
         }
         else
         {

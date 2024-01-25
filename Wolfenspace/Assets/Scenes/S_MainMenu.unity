@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5ebe4d56b054f9111e75757b69a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSceneName: S_HUB
+  mapSceneName: S_Level1
 --- !u!1 &767400397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5ebe4d56b054f9111e75757b69a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSceneName: S_HUB
+  mapSceneName: New map
 --- !u!1 &1673277082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48f5ebe4d56b054f9111e75757b69a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSceneName: S_HUB
+  mapSceneName: New map
 --- !u!1 &1700687857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wolfenspace
+  m_text: Pju Bla
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c23011e5c57f654c8f843cc534d680b, type: 2}
   m_sharedMaterial: {fileID: -4863969453863807496, guid: 8c23011e5c57f654c8f843cc534d680b, type: 2}

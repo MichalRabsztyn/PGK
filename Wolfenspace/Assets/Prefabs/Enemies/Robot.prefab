@@ -2046,7 +2046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2233766404114783656}
   - component: {fileID: 5549517333044694638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AssaultRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

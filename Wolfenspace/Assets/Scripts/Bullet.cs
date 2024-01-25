@@ -1,60 +1,55 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 10.0f; // Adjust this value as needed
     public float damage = 1.0f;
-    public float significanceDistance = 100.0f;
-    public LayerMask layerMask;
 
-    [HideInInspector] public Vector3 movementDirection = Vector3.forward;
-    private Vector3 originalLocation = Vector3.zero;
+    [HideInInspector] public Vector3 movementDirection;
 
-    void Start()
+    private void Start()
     {
-        originalLocation = transform.position;
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
-        {
-            Vector3 bulletDirection = hit.point - originalLocation;
-            this.GetComponent<Rigidbody>().velocity = bulletDirection * speed;
-        }
-        else
-        {
-            Vector3 bulletDirection = (Camera.main.transform.position + Camera.main.transform.forward * 1000) - originalLocation;
-            this.GetComponent<Rigidbody>().velocity = bulletDirection * speed;
-        }
+        // Initialization if needed
     }
 
-    void Update()
+    public void OnSpawn(RaycastHit hit)
     {
-        if (Vector3.Distance(transform.position, originalLocation) > significanceDistance)
+        StartCoroutine(MoveBullet(hit));
+    }
+
+    private IEnumerator MoveBullet(RaycastHit hit)
+    {
+        float distance = Vector3.Distance(transform.position, hit.point);
+        float timeToReachTarget = distance / speed;
+
+        float time = 0f;
+        Vector3 startPosition = transform.position;
+
+        while (time < 1f)
         {
-            Destroy(this.gameObject);
+            time += Time.deltaTime / timeToReachTarget;
+            transform.position = Vector3.Lerp(startPosition, hit.point, time);
+
+            yield return null;
         }
+
+        transform.position = hit.point;
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision == null || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             return;
         }
 
-        IHealth ihealth = collision.transform.GetComponent<IHealth>();
-        if (ihealth == null)
-        {
-            ihealth = collision.transform.GetComponentInParent<IHealth>();
-        }
-
-        if (ihealth != null)
+        if (collision.transform.TryGetComponent(out IHealth ihealth) || collision.transform.parent.TryGetComponent(out ihealth))
         {
             ihealth.ReduceHp(damage);
         }
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
