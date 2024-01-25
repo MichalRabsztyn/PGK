@@ -43,6 +43,7 @@ public class NpcInteractionController
             NpcUiController.Instance.OnTalkingAction += npcController.NpcAnimator.PlayTalking;
             NpcUiController.Instance.OnThinkingAction += npcController.NpcAnimator.PlayThinking;
             npcController.NpcAnimator.PlayTalking();
+            PlayerBlocker.Instance.LockPlayer(true);
         }
     }
 
@@ -51,6 +52,7 @@ public class NpcInteractionController
         npcController.ChangeState(NpcState.Idle);
         NpcUiController.Instance.OnTalkingAction -= npcController.NpcAnimator.PlayTalking;
         NpcUiController.Instance.OnThinkingAction -= npcController.NpcAnimator.PlayThinking;
+        PlayerBlocker.Instance.LockPlayer(false);
     }
 
     public async void SendReply(string prompt)
