@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9af9e923fd466458660847b0a081ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoRefillAmount: 10
+  ammoRefillAmount: 25
   shouldRespawnAmmoBox: 1
   ammoBoxRespawnDelay: 5
   AmmoBoxModel: {fileID: 7008304477028706754}
