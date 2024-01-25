@@ -17,7 +17,7 @@ public class CapitanSpawner : MonoBehaviour
             enabled = false;
         }
         
-        if(Input.GetKeyUp(KeyCode.K))
+        if(Input.GetKeyUp(KeyCode.F12))
         {
             int size = enemyContainer.childCount;
 
